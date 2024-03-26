@@ -12,12 +12,6 @@ function App() {
   const [featPup, setFeatPup] = useState(null)
   const [isChecked, setIsChecked] = useState(false)
 
-  const handlePuppyChoice = (puppy) => {
-    const selectedPup = puppies.find(curPup => {
-      return curPup.id === puppy.id
-    })
-    setFeatPup(selectedPup)
-  }
   return (
     <div className='app'>
       <CuteFilter
@@ -27,7 +21,7 @@ function App() {
       <List
         puppies={puppies}
         isChecked={isChecked}
-        choosePuppy={handlePuppyChoice}
+        choosePuppy={setFeatPup}
       />
       <Display puppyToDisplay={featPup} />
     </div>
