@@ -6,7 +6,8 @@ body {
   padding: 10px;
   border: 2px solid rgb(91, 70, 18);
   background-color: rgb(208, 172, 79);
-  color: rgb(89, 66, 37)
+  color: rgb(89, 66, 37);
+  width:500px;
 }
 
 #feature>h2 {

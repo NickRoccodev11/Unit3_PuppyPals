@@ -1,37 +1,29 @@
+//data
 import { puppyList } from './data.js'
+//methods
 import { useState } from 'react'
+//components
+import List from './List.jsx'
+import Display from './Display.jsx'
 
 function App() {
   const [puppies, setPuppies] = useState(puppyList)
-  const [featPupId, setFeatPupId] = useState(null)
+  const [featPup, setFeatPup] = useState(null)
 
-  const featuredPup = puppies.find(curPup => {
-    return curPup.id === featPupId
-  })
-
+  const handlePuppyChoice = (puppy) => {
+    const selectedPup = puppies.find(curPup => {
+      return curPup.id === puppy.id
+    })
+    setFeatPup(selectedPup)
+  }
 
   return (
     <div className='app'>
-      {
-        puppies.map((puppy) => {
-          return <p
-            className='listp'
-            onClick={() => { setFeatPupId(puppy.id) }}
-            key={puppy.id}
-          >
-            {puppy.name}
-          </p>
-        })
-      }
-      {featPupId && (
-        <div id="feature">
-          <h2>{featuredPup.name}</h2>
-          <ul>
-            <li>Age: {featuredPup.age}</li>
-            <li>Email: {featuredPup.email}</li>
-          </ul>
-        </div>
-      )}
+      <List
+        puppies={puppies}
+        choosePuppy={handlePuppyChoice}
+      />
+      <Display puppyToDisplay={featPup} />
     </div>
   )
 }
