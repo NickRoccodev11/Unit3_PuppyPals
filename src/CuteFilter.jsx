@@ -1,4 +1,3 @@
-
 const CuteFilter = ({ setIsChecked, isChecked }) => {
   return (
     <>

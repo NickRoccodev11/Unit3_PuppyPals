@@ -1,5 +1,3 @@
-
-
 const List = ({ puppies, choosePuppy, isChecked }) => {
   return (
     <>
