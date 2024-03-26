@@ -1,6 +1,6 @@
 //data
 import { puppyList } from './data.js'
-//methods
+//hooks
 import { useState } from 'react'
 //components
 import List from './List.jsx'
