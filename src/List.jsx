@@ -1,10 +1,12 @@
 
 
-const List = ({ puppies, choosePuppy }) => {
+const List = ({ puppies, choosePuppy, isChecked }) => {
   return (
     <>
       {
-        puppies.map((puppy) => {
+        puppies.filter(puppy=>{
+          return !isChecked ||  puppy.isCute
+        }).map((puppy) => {
           return <p
             className='listp'
             onClick={() => choosePuppy(puppy)}
